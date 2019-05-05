@@ -1,3 +1,6 @@
-export const joinController = (req, res) => res.send('Join');
-export const loginController = (req, res) => res.send('Login');
-export const logoutController = (req, res) => res.send('Logout');
+export const join = (req, res) => res.render('Join');
+export const login = (req, res) => res.render('Login');
+export const logout = (req, res) => res.render('Logout');
+export const userDetail = (req, res) => res.render('UserDetail');
+export const editProfile = (req, res) => res.render('EditProfile');
+export const changePassword = (req, res) => res.render('ChangePassword');
