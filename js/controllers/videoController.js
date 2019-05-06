@@ -1,14 +1,13 @@
+import { videos } from "../db";
 export const home = (req, res) => {
-    res.render('Home', {pageTitle: 'Home'});
+    res.render('Home', {pageTitle: 'Home', videos});
 };
 
 export const search = (req, res) => {
     const { 
-        query: { 
-            term: searchingBy 
-        }
+        query: { term: searchingBy }
     } = req;
-    res.render('Search', { pageTitle: 'Seardch', searchingBy });
+    res.render('Search', { pageTitle: 'Seardch', searchingBy, videos });
 };
 
 export const upload = (req, res) => { 

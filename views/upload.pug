@@ -1,4 +1,10 @@
 extends layouts/main.pug
 
 block content
-    p Upload!!
+    .form-container
+        form(action=routes.upload, method="post")
+            label(for="avatar") Avatar
+            input(type="file", id="avatar", name="avatar")
+            input(type="text", placeholder="Title", name="name")
+            input(type="textarea", placeholder="Description", name="desc")
+            input(type="submit", value="Upload Video")
