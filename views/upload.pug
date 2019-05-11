@@ -2,9 +2,9 @@ extends layouts/main.pug
 
 block content
     .form-container
-        form(action=routes.upload, method="post")
+        form(action="/videos"+routes.upload, method="post", enctype="multipart/form-data")
             label(for="avatar") Avatar
-            input(type="file", id="avatar", name="avatar", required=true)
-            input(type="text", placeholder="Title", name="name")
+            input(type="file", id="file", name="videoFile", required=true, accept="video/*")
+            input(type="text", placeholder="Title", name="title")
             input(type="textarea", placeholder="Description", name="desc")
             input(type="submit", value="Upload Video")
