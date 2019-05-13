@@ -13,6 +13,7 @@ const app = express();
 
 app.use(helmet());
 app.set("view engine", "pug");
+app.use('/videos', express.static('videos'));
 app.use(cookieparser());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());

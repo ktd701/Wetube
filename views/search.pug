@@ -1,4 +1,5 @@
 extends layouts/main.pug
+include mixins/videoBlock
 
 block content
     .search-header
@@ -8,5 +9,6 @@ block content
             +videoBlock({
                 title:video.title,
                 views:video.views,
-                videoFile:video.videoFile
+                videoFile:video.videoFile,
+                id:video.id 
             })
