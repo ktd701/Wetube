@@ -26,7 +26,7 @@ export const search = async (req, res) => {
         console.log(videos);
     }
     catch (err) {
-
+        console.log(err);
     }
     res.render('Search', { pageTitle: 'Seardch', searchingBy, videos });
 };
@@ -70,7 +70,7 @@ export const getEditVideo = async (req, res) => {
     try {
         const video = await Video.findById(id);
         console.dir(video);
-        res.render("editVideo", {pageTitle: `Edit ${video.title}`, video})
+        res.render("editVideo", {pageTitle: `Edit ${video.title}`, video});
     }
     catch (err) {
         res.render(routes.home);
@@ -83,7 +83,7 @@ export const postEditVideo = async (req, res) => {
         body: {title, description}
     } = req;
     try {
-        await Video.findOneAndUpdate({_id: id}, {title, description})
+        await Video.findOneAndUpdate({_id: id}, {title, description});
         res.redirect(routes.videoDetail(id));
     }
     catch(err) {
@@ -96,10 +96,10 @@ export const deleteVideo = async (req, res) => {
         params: {id}
     } = req;
     try {
-        await Video.findOneAndRemove({_id: id})
+        await Video.findOneAndRemove({_id: id});
     }
-    catch {
-        
+    catch(err) {
+        console.log(err);
     }
     res.redirect(routes.home);
 };
